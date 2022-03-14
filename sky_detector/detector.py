@@ -14,9 +14,9 @@ def cal_skyline(mask):
             first_zero_index = np.where(after_median == 0)[0][0]
             first_one_index = np.where(after_median == 1)[0][0]
             if first_zero_index > 20:
-                mask[first_one_index:first_zero_index, i] = 1
-                mask[first_zero_index:, i] = 0
-                mask[:first_one_index, i] = 0
+                mask[first_one_index:first_zero_index, i] = 0
+                mask[first_zero_index:, i] = 1
+                mask[:first_one_index, i] = 1
         except:
             continue
     return mask
